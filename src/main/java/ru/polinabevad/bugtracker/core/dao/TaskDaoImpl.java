@@ -37,4 +37,6 @@ public class TaskDaoImpl extends DAO<Integer, Task> implements TaskDao {
         criteria.add(Restrictions.eq("taskName", taskName));
         return (List<Task>) criteria.list();
     }
+
+
 }

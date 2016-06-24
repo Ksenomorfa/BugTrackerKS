@@ -1,12 +1,10 @@
 package ru.polinabevad.bugtracker.core.services;
 
 import ru.polinabevad.bugtracker.core.Message;
+import ru.polinabevad.bugtracker.core.StatusType;
 
 import java.util.List;
 
-/**
- * Тип пользователя: админский или нет, у админского будут права на удаление задач\сообщений
- */
 public interface MessageService {
 
     Message findById(int id);
@@ -21,6 +19,6 @@ public interface MessageService {
 
     List<Message> findMessagesByTaskId(Integer taskId);
 
-    void deleteAllMessages();
+    StatusType changeTaskStatus(StatusType statusTypeTo, Message message);
 }
 

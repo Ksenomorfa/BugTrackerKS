@@ -1,6 +1,9 @@
 package ru.polinabevad.bugtracker.core.dao;
 
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 import ru.polinabevad.bugtracker.core.People;
+import ru.polinabevad.bugtracker.core.Task;
 
 import java.util.List;
 
@@ -14,5 +17,6 @@ public interface PeopleDao{
 
     List<People> findAllPeoples();
 
-    List<People> findByName(String name);
+    List<People> findByLogin(String login);
+
 }

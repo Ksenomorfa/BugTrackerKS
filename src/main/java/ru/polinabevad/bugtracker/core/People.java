@@ -15,14 +15,17 @@ public class People {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int userId;
+
     @Column
     private String login;
     @Column
     private String name;
     @Column
     private String password;
+
     @Column
     private String email;
+
     @Column
     @Temporal(TemporalType.TIMESTAMP)
     private Calendar regDate;
@@ -47,6 +50,7 @@ public class People {
     //пользователь - поддержка (принимают задачи в работу)
     @Column
     private boolean isSupport;
+
     //пользователь активен?
     @Column
     private boolean isActive;
@@ -75,6 +79,10 @@ public class People {
 
     public String getLogin() {
         return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public void changeUserType(String type) {
@@ -106,13 +114,28 @@ public class People {
     }
 
     //TODO:здесь будет проверка прав пользователя
-    boolean checkUserisAdmin() {
+    boolean checkUserIsAdmin() {
         return isAdmin;
     }
 
-    boolean checkUserisSupport() {
+    boolean checkUserIsSupport() {
         return isSupport;
     }
 
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public Calendar getRegDate() {
+        return regDate;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 
 }

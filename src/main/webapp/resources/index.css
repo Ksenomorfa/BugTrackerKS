@@ -55,3 +55,19 @@
     background-color: gainsboro;
     display: inline-block;
 }
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+table {
+    border-collapse: collapse;
+}
+td,th {
+    padding: 3px;
+    border: 1px solid black;
+}

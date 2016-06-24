@@ -7,32 +7,18 @@
 <html>
 <head>
     <title>Стартовая страница Баг-трекера</title>
-
     <link href="<c:url value="/resources/clearcss.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/index.css"/>" rel="stylesheet">
-
-
 </head>
 <body>
 <div class="main">
-
-    <div class="header"> Здесь будет заголовок с переходом на главную + кнопки:
-        <button name="create">Войти\Зарегистрироваться</button>
-        <button name="create">FAQ</button>
-        <br>
-
+    <div class="header">
+        <jsp:include page="header.jsp"/>
     </div>
 
     <div class="center">
         <div class="leftpane">
-            Здесь будут кнопки:
-            <button name="create">Создать задачу</button> <!--<a href="<c:url value='/new' />">Add New Task</a>-->
-            <br><br>
-            <button name="taskList">Список задач</button>
-            <br> <br>
-            <button name="taskFilter">Фильтр задач</button>
-            <br> <br>
-
+            <jsp:include page="leftpane.jsp"/>
         </div>
         <div class="content">
             Здесь будет выводиться само приложение: список задач, при клике на задаче - содержимое задачи,
@@ -41,7 +27,6 @@
             форма новой задачи, форма редактирования задачи, форма просмотра задачи.<br>
             форма списка задач, FAQ, форма логина и форма регистрации
             (возможно просто два поля в заголовке с кнопками Войти\Зарегистрироваться).<br>
-
             <h2>List of Tasks</h2>
             <table>
                 <tr>
@@ -51,7 +36,6 @@
                     <td>Автор</td>
                     <td>Ответственный</td>
                     <td>Статус</td>
-                    <td></td>
                 </tr>
                 <c:forEach items="${tasks}" var="task">
                     <tr>
@@ -68,21 +52,14 @@
             </table>
             <br/>
         </div>
-
         <div class="rigthpane">
-            Здесь будут блоки с названиями задач, перечисление и ссылка: <br>
-            "Мои задачи (последние 5)"<br>
-            "Новые задачи (последние 5)<br>
+            <jsp:include page="rightpane.jsp"/>
         </div>
-
     </div>
-
 
     <div class="footer">
-        Здесь будет информация о приложении: контакты, год.
+        <jsp:include page="footer.jsp"/>
     </div>
 </div>
-
-
 </body>
 </html>

@@ -148,7 +148,7 @@ public class Task {
     //полной процедуры пока удаления не будет, просто помечаем как isDeleted
     public String deleteTask(People currentUser) {
         //проверяем, что пользователь админ
-        if (currentUser.checkUserisAdmin()) {
+        if (currentUser.checkUserIsAdmin()) {
             TaskList.tasks.remove(this);
             return "Задача удалена.";
         }
