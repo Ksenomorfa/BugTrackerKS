@@ -8,8 +8,8 @@
 <head>
     <title>Стартовая страница Баг-трекера</title>
 
-    <link href="<c:url value="/resources/clearcss.css" />"  rel="stylesheet" >
-    <link href="<c:url value="/resources/index.css"/>"  rel="stylesheet" >
+    <link href="<c:url value="/resources/clearcss.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/index.css"/>" rel="stylesheet">
 
 
 </head>
@@ -26,7 +26,7 @@
     <div class="center">
         <div class="leftpane">
             Здесь будут кнопки:
-            <button name="create">Создать задачу</button>
+            <button name="create">Создать задачу</button> <!--<a href="<c:url value='/new' />">Add New Task</a>-->
             <br><br>
             <button name="taskList">Список задач</button>
             <br> <br>
@@ -41,23 +41,32 @@
             форма новой задачи, форма редактирования задачи, форма просмотра задачи.<br>
             форма списка задач, FAQ, форма логина и форма регистрации
             (возможно просто два поля в заголовке с кнопками Войти\Зарегистрироваться).<br>
-            Пока для проверки добавляется при каждом обновлении страницы задача в список и выводится ее
-            toString.<br><br>
-            Переделать все ниже на запрос из модели.
-            {$task.service
-            <%
-                TaskList.tasks.createTask("Новая задача");
-                for (int i = 0; i < TaskList.tasks.size(); i++) {
-                    if (TaskList.tasks.get(i).getClass() == Task.class) {
-                        Task task = TaskList.tasks.get(i);
-            %>
-            <%-- Ругается на print. Что за бред?--%>
-            <% out.print("Задача " + task.toString()); %> <br>
-            <%
-                        }
-                }
-            %>
 
+            <h2>List of Tasks</h2>
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td>Название</td>
+                    <td>Дата создания</td>
+                    <td>Автор</td>
+                    <td>Ответственный</td>
+                    <td>Статус</td>
+                    <td></td>
+                </tr>
+                <c:forEach items="${tasks}" var="task">
+                    <tr>
+                        <td>${task.taskId}</td>
+                        <td>${task.taskName}</td>
+                        <td>${task.taskCreateDate.time}</td>
+                        <td>${task.taskAuthor.login}</td>
+                        <td>${task.taskAppointer.login}</td>
+                        <td>${task.taskStatus.name()}</td>
+                        <!--<td><a href="<c:url value='/edit-${employee.ssn}-employee' />">${employee.ssn}</a></td>
+                        <td><a href="<c:url value='/delete-${employee.ssn}-employee' />">delete</a></td>-->
+                    </tr>
+                </c:forEach>
+            </table>
+            <br/>
         </div>
 
         <div class="rigthpane">

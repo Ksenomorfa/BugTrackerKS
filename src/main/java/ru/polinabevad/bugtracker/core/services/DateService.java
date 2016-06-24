@@ -1,4 +1,4 @@
-package ru.polinabevad.bugtracker.services;
+package ru.polinabevad.bugtracker.core.services;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

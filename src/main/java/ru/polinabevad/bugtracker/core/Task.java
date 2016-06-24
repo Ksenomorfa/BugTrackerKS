@@ -71,7 +71,7 @@ public class Task {
         this.taskAppointer = taskAppointer;
     }
 
-    void setCloseDate(Calendar date) {
+    public void setCloseDate(Calendar date) {
         taskCloseDate = date;
     }
 
@@ -83,7 +83,7 @@ public class Task {
         return this.taskUpdateDate;
     }
 
-    void setTaskUpdateDate(Calendar date) {
+    public void setTaskUpdateDate(Calendar date) {
         taskUpdateDate = date;
     }
 

@@ -1,4 +1,4 @@
-package ru.polinabevad.bugtracker.services;
+package ru.polinabevad.bugtracker.core.services;
 
 import org.postgresql.Driver;
 
