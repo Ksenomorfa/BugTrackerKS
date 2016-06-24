@@ -18,7 +18,7 @@
             <jsp:include page="leftpane.jsp"/>
         </div>
         <div class="content">
-            <h2>List of Users</h2>
+            <h2>Список пользователей:</h2>
             <table>
                 <tr>
                     <td>ID</td>
@@ -30,7 +30,7 @@
                     <tr>
                         <td>${people.userId}</td>
                         <td>${people.login}</td>
-                        <td>${people.regDate.time.date}</td>
+                        <td>${people.regDate.time.date}.${people.regDate.time.month+1}.${people.regDate.time.year+1900}</td>
                         <td>${people.email}</td>
                     </tr>
                 </c:forEach>

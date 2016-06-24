@@ -21,13 +21,7 @@
             <jsp:include page="leftpane.jsp"/>
         </div>
         <div class="content">
-            Здесь будет выводиться само приложение: список задач, при клике на задаче - содержимое задачи,
-            при этом кнопки поменяются - добавятся кнопки для комментариев и перехода назад. <br>
-            Нужны еще страницы:<br>
-            форма новой задачи, форма редактирования задачи, форма просмотра задачи.<br>
-            форма списка задач, FAQ, форма логина и форма регистрации
-            (возможно просто два поля в заголовке с кнопками Войти\Зарегистрироваться).<br>
-            <h2>List of Tasks</h2>
+            <h2>Список задач:</h2>
             <table>
                 <tr>
                     <td>ID</td>
@@ -41,16 +35,23 @@
                     <tr>
                         <td>${task.taskId}</td>
                         <td>${task.taskName}</td>
-                        <td>${task.taskCreateDate.time}</td>
+                        <td>${task.taskCreateDate.time.date}.${task.taskCreateDate.time.month+1}.${task.taskCreateDate.time.year+1900}</td>
                         <td>${task.taskAuthor.login}</td>
                         <td>${task.taskAppointer.login}</td>
-                        <td>${task.taskStatus.name()}</td>
+                        <td>${task.taskStatus.statusName}</td>
                         <!--<td><a href="<c:url value='/edit-${employee.ssn}-employee' />">${employee.ssn}</a></td>
                         <td><a href="<c:url value='/delete-${employee.ssn}-employee' />">delete</a></td>-->
                     </tr>
                 </c:forEach>
             </table>
             <br/>
+                Добавить еще: при клике на задаче - содержимое задачи,
+                при этом кнопки поменяются - добавятся кнопки для комментариев и перехода назад. <br>
+                Нужны еще страницы:<br>
+                форма новой задачи, форма редактирования задачи, форма просмотра задачи.<br>
+                форма списка задач, FAQ, форма логина и форма регистрации
+                (возможно просто два поля в заголовке с кнопками Войти\Зарегистрироваться).<br>
+
         </div>
         <div class="rigthpane">
             <jsp:include page="rightpane.jsp"/>
